@@ -1,1 +1,0 @@
-# niicogarciiaaa.github.io
