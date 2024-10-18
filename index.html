@@ -1,41 +1,11 @@
-
-                const totalInicio = h1 * 60 + m1; // minutos
-                const totalFin = h2 * 60 + m2; // minutos
-                return (totalFin - totalInicio) / 30; // Duración en tramos de 30 minutos
-            }
-
-            function incrementaHora(hora, minutos) {
-                const [h, m] = hora.split(':').map(Number);
-                const totalMinutos = h * 60 + m + minutos;
-                const nuevaHora = Math.floor(totalMinutos / 60);
-                const nuevoMinuto = totalMinutos % 60;
-                return `${String(nuevaHora).padStart(2, '0')}:${String(nuevoMinuto).padStart(2, '0')}`;
-            }
-
-            function actualizarTablaHorario() {
-                tablaHorario.innerHTML = ''; // Limpiar la tabla
-
-                // Recorrer las franjas horarias predefinidas
-                
-
-                // Crear filas para cada franja horaria
-                franjasHorarias.forEach(({ hora, isLunes }) => {
-                    const [horaInicio, horaFin] = hora.split("-");
-                    const fila = document.createElement('tr');
-                    fila.innerHTML = `<td>${hora}</td>`;
-                    const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
-
-                    dias.forEach(dia => {
-                        if (isLunes && dia === 'Lunes') {
-                            const asignatura = horario[horaInicio] && horario[horaInicio][dia] ? horario[horaInicio][dia] : '';
-                            fila.innerHTML += `<td>${asignatura}</td>`;
-                        } else if (!isLunes) {
-                            const asignatura = horario[horaInicio] && horario[horaInicio][dia] ? horario[horaInicio][dia] : '';
-                            fila.innerHTML += `<td>${asignatura}</td>`;
-                        } else {
-                            fila.innerHTML += `<td></td>`;
-                        }
-                    });
-
-                    // Añadir botón de eliminar
-                    fila.innerHTML += `<td><button class="delete-btn" data-hora
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hola, pagina de inicio</h1>
+</body>
+</html>
