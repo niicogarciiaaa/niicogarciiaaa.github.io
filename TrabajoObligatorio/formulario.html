@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Venta</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F9F5EB; 
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-left: 30%;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            padding: 30px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #E4DCCF;
+        }
+        a , li {
+        text-decoration: none;
+        color:black;
+        display: inline;
+        margin-right: 2%;
+        background-color:#E4DCCF;
+        margin-left: 25px;
+        font-family: Arial;
+     }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Formulario de Venta</h1>
+    <nav align="center">
+        <a href="paginaprincipal.html"><li>Inicio</li></a>
+        <a href="ventamotos.html"><li>Venta de coches</li></a>
+        <a href="ventamotos.html"><li>Venta de motos</li></a>
+    </nav>
+    <form action="#" method="post">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" name="nombre" required>
+
+        <label for="email">Correo Electrónico:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Teléfono:</label>
+        <input type="tel" id="phone" name="telefono" required>
+
+        <label for="vehicle">Tipo de Vehículo:</label>
+        <select id="vehicle" name="vehicle" required>
+            <option value="" disabled selected>Selecciona un tipo de vehículo</option>
+            <option value="coche">Coche</option>
+            <option value="moto">Moto</option>
+        </select>
+
+        <label for="message">Mensaje:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <table align="center"style="border=1;">
+        <tr>
+        <th>Datos de contacto</th>
+        </tr>
+        
+        <tr>
+            <td>Nombre:Nicolas García Moreira</td>
+        </tr>
+        <tr>
+            <td>Telefono:684246716</td>
+        </tr>
+        <tr>
+            <td>e-mail:example@gmail.com</td>
+        </tr>
+
+
+    </table>
+</body>
+</html>

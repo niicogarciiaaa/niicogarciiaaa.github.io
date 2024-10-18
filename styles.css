@@ -1,0 +1,9 @@
+a , li {
+    text-decoration: none;
+    color:black;
+    display: inline;
+    margin-right: 2%;
+    
+    margin-left: 25px;
+    font-family: Arial;
+}

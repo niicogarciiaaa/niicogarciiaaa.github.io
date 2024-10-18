@@ -1,0 +1,38 @@
+
+
+/* rojo1:E21818 rojo2:EA5455 beige1:E4DCCF beige2:F9F5EB*/
+h1{
+    color:red;
+}
+body{
+    background-color: #F9F5EB;
+}
+
+
+a , li {
+    text-decoration: none;
+    color:black;
+    display: inline;
+    margin-right: 2%;
+    background-color:#E4DCCF;
+    margin-left: 25px;
+    font-family: Arial;
+}
+
+.general{
+    margin-left: 10%;
+    text-align: center;
+    margin-right: 10%;
+    margin-top: 5%;
+ }
+ h3 {
+    text-align: left;
+    color:red;
+
+ }
+ p{
+    text-align: justify;
+ }
+source{
+    width: 200px;
+}
