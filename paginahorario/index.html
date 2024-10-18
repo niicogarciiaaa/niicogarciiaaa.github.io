@@ -114,11 +114,8 @@
                     <option value="Viernes">Viernes</option>
                 </select>
                 
-                <label for="horaInicio">Hora de Inicio:</label>
-                <input type="text" id="horaInicio" placeholder="Ej: 08:30" required>
-
-                <label for="horaFin">Hora de Fin:</label>
-                <input type="text" id="horaFin" placeholder="Ej: 09:20" required>
+                <label for="hora">Hora:</label>
+                <input type="text" id="hora" placeholder="Ej: 8:30-9:20" required>
 
                 <label for="asignatura">Asignatura:</label>
                 <input type="text" id="asignatura" required>
@@ -138,7 +135,36 @@
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <!-- Franjas horarias fijas -->
+                    <tr>
+                        <td>08:30-09:20</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>09:20-11:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>08:30-11:00</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
 
@@ -173,21 +199,19 @@
             const tablaHorario = document.getElementById('tablaHorario').querySelector('tbody');
             const formNotas = document.getElementById('formNotas');
             const tablaNotas = document.getElementById('tablaNotas').querySelector('tbody');
-            
-            // Inicializamos horario como un array, en lugar de objeto
-            let horario = JSON.parse(localStorage.getItem('horario')) || [];
+            const horario = {};
 
+            // Cargar datos almacenados
             cargarDatos();
 
             formHorario.addEventListener('submit', function (e) {
                 e.preventDefault();
 
                 const dia = document.getElementById('dia').value;
-                const horaInicio = document.getElementById('horaInicio').value;
-                const horaFin = document.getElementById('horaFin').value;
+                const hora = document.getElementById('hora').value.split("-");
                 const asignatura = document.getElementById('asignatura').value;
 
-                agregarClase(dia, horaInicio, horaFin, asignatura);
+                agregarClase(dia, hora[0].trim(), hora[1].trim(), asignatura);
                 guardarHorario();
                 
                 formHorario.reset();
@@ -206,45 +230,79 @@
             });
 
             function agregarClase(dia, horaInicio, horaFin, asignatura) {
-                // Agregar la clase al horario
-                horario.push({ dia, horaInicio, horaFin, asignatura });
+                // Almacenar la asignatura en un objeto horario
+                if (!horario[horaInicio]) {
+                    horario[horaInicio] = {};
+                }
+                horario[horaInicio][dia] = asignatura;
+
+                // Calcular la duración de la clase para determinar las filas ocupadas
+                const duracion = calcularDuracion(horaInicio, horaFin);
+                for (let i = 0; i < duracion; i++) {
+                    const horaActual = incrementaHora(horaInicio, i * 30);
+                    if (!horario[horaActual]) {
+                        horario[horaActual] = {};
+                    }
+                    horario[horaActual][dia] = asignatura;
+                }
+
                 actualizarTablaHorario();
             }
 
             function calcularDuracion(horaInicio, horaFin) {
                 const [h1, m1] = horaInicio.split(':').map(Number);
                 const [h2, m2] = horaFin.split(':').map(Number);
-                return ((h2 * 60 + m2) - (h1 * 60 + m1)) / 30; // Duración en tramos de 30 minutos
+                const totalInicio = h1 * 60 + m1; // minutos
+                const totalFin = h2 * 60 + m2; // minutos
+                return (totalFin - totalInicio) / 30; // Duración en tramos de 30 minutos
+            }
+
+            function incrementaHora(hora, minutos) {
+                const [h, m] = hora.split(':').map(Number);
+                const totalMinutos = h * 60 + m + minutos;
+                const nuevaHora = Math.floor(totalMinutos / 60);
+                const nuevoMinuto = totalMinutos % 60;
+                return `${String(nuevaHora).padStart(2, '0')}:${String(nuevoMinuto).padStart(2, '0')}`;
             }
 
             function actualizarTablaHorario() {
                 tablaHorario.innerHTML = ''; // Limpiar la tabla
 
-                const franjasHorarias = ["08:30-09:20", "09:20-11:00", "11:00-11:30", "11:30-13:10", "13:10-14:50"];
-                const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
+                // Recorrer las franjas horarias predefinidas
+                const franjasHorarias = [
+                    { hora: "08:30-09:20", isLunes: true },
+                    { hora: "09:20-11:00", isLunes: true },
+                    { hora: "08:30-11:00", isLunes: false }
+                ];
 
-                franjasHorarias.forEach(franja => {
+                // Crear filas para cada franja horaria
+                franjasHorarias.forEach(({ hora, isLunes }) => {
+                    const [horaInicio, horaFin] = hora.split("-");
                     const fila = document.createElement('tr');
-                    fila.innerHTML = `<td>${franja}</td>`;
+                    fila.innerHTML = `<td>${hora}</td>`;
+                    const dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'];
 
                     dias.forEach(dia => {
-                        const clase = horario.find(h => h.dia === dia && h.horaInicio === franja.split('-')[0]);
-                        if (clase) {
-                            const duracion = calcularDuracion(clase.horaInicio, clase.horaFin);
-                            fila.innerHTML += `<td rowspan="${duracion}">${clase.asignatura} (${clase.horaInicio}-${clase.horaFin})</td>`;
+                        if (isLunes && dia === 'Lunes') {
+                            const asignatura = horario[horaInicio] && horario[horaInicio][dia] ? horario[horaInicio][dia] : '';
+                            fila.innerHTML += `<td>${asignatura}</td>`;
+                        } else if (!isLunes) {
+                            const asignatura = horario[horaInicio] && horario[horaInicio][dia] ? horario[horaInicio][dia] : '';
+                            fila.innerHTML += `<td>${asignatura}</td>`;
                         } else {
                             fila.innerHTML += `<td></td>`;
                         }
                     });
 
-                    fila.innerHTML += `<td><button class="delete-btn" data-hora="${franja}">Eliminar</button></td>`;
+                    // Añadir botón de eliminar
+                    fila.innerHTML += `<td><button class="delete-btn" data-hora="${horaInicio}">Eliminar</button></td>`;
                     tablaHorario.appendChild(fila);
                 });
 
                 // Añadir evento a los botones de eliminar
                 document.querySelectorAll('.delete-btn').forEach(button => {
                     button.addEventListener('click', function () {
-                        eliminarClase(this.getAttribute('data-hora'));
+                        eliminarHora(this.getAttribute('data-hora'));
                     });
                 });
             }
@@ -255,10 +313,10 @@
                 tablaNotas.appendChild(fila);
             }
 
-            function eliminarClase(hora) {
-                horario = horario.filter(clase => clase.horaInicio !== hora);
+            function eliminarHora(hora) {
+                delete horario[hora];  // Eliminar la hora del objeto horario
                 actualizarTablaHorario();  // Actualizar la tabla visualmente
-                guardarHorario();  // Guardar el nuevo horario en LocalStorage
+                guardarHorario();  // Guardar el nuevo horario en localStorage
             }
 
             function guardarHorario() {
@@ -278,13 +336,15 @@
             }
 
             function cargarDatos() {
-                const notasGuardadas = JSON.parse(localStorage.getItem('notas')) || [];
+                const horarioGuardado = JSON.parse(localStorage.getItem('horario'));
+                const notasGuardadas = JSON.parse(localStorage.getItem('notas'));
 
-                if (horario.length) {
+                if (horarioGuardado) {
+                    Object.assign(horario, horarioGuardado);
                     actualizarTablaHorario();
                 }
 
-                if (notasGuardadas.length) {
+                if (notasGuardadas) {
                     notasGuardadas.forEach(item => {
                         agregarFilaNotas(item.asignatura, item.nota);
                     });
