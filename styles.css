@@ -7,3 +7,29 @@ a , li {
     margin-left: 25px;
     font-family: Arial;
 }
+.proyecto {
+    text-align: center;
+    margin: 15px;
+    width: 400px;
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #E4DCCF;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5px;
+}
+#general {
+    display: flex; /* Hace que los divs hijos estén en una sola línea */
+    justify-content: space-around; /* Distribuye espacio entre los divs */
+    align-items: center;
+}
+p{
+    font-family: Arial;
+}
