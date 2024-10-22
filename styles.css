@@ -1,12 +1,17 @@
-a , li {
+a, li {
     text-decoration: none;
-    color:black;
+    color: black;
     display: inline;
     margin-right: 2%;
-    
     margin-left: 25px;
     font-family: Arial;
 }
+
+p {
+    font-family: Arial;
+    line-height: 1.5;
+}
+
 .proyecto {
     text-align: center;
     margin: 15px;
@@ -20,16 +25,16 @@ a , li {
     justify-content: space-around;
     align-items: center;
 }
+
 img {
     width: 100%;
+    max-width: 400px; /* Limita el ancho máximo */
     height: auto;
     margin-bottom: 5px;
 }
+
 #general {
     display: flex; /* Hace que los divs hijos estén en una sola línea */
     justify-content: space-around; /* Distribuye espacio entre los divs */
     align-items: center;
-}
-p{
-    font-family: Arial;
 }
