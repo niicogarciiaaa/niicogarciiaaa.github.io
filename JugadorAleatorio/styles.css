@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d4e9e2;
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #006241;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 2%;
+}
+
+#clue {
+    font-size: 18px;
+    margin-bottom: 20px;
+    
+}
+
+.team-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#team-name, #player-status {
+    margin-left: 20px;
+    text-align: left;
+}
+
+#guess {
+    width: calc(100% - 22px);
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#check-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #1e3932;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#check-button:hover {
+    background-color:#1fc9d0;
+}
+
+#message {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#counter {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+    text-align: left;
+    
+}
+
+.suggestions-list li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    background-color: #dff9ba;
+    color:black;
+}
+
+.suggestions-list li:hover {
+    background-color: #d4e9e2;
+}
+#team-badge{
+    height: auto;
+    width: auro;
+}
+h1{
+    color: #1a3932;
+    font-size: 2em;
+}

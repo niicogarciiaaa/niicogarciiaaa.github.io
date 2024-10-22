@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el Jugador de Fútbol</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Adivina el Jugador</h1>
+        <div id="clue"></div>
+        <div class="team-info">
+            <img id="team-badge" src="" alt="Escudo del equipo" width="100">
+            <div id="team-name"></div>
+            <div id="player-status"></div>
+        </div>
+        <input type="text" id="guess" placeholder="Escribe el nombre del jugador">
+        <ul id="suggestions" class="suggestions-list"></ul>
+        <button id="check-button">Comprobar</button>
+        <div id="message"></div>
+        <div id="counter">Jugadores acertados: 0</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
