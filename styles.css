@@ -39,7 +39,9 @@ img {
     display: flex; /* Hace que los divs hijos estén en una sola línea */
     justify-content: space-around; /* Distribuye espacio entre los divs */
     align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en lugar de desbordarse */
 }
+
 .proyecto:hover {
     box-shadow: 2px 2px 15px #00ADB5;
     font-size: 1.2em;
@@ -47,10 +49,22 @@ img {
 }
 
 #descripcion {
-    position: fixed;
-    bottom: 0;
+    position: relative; /* Cambia a relative o quítalo */
     width: 100%;
     text-align: center;
     padding: 10px;
-    
+    margin-top: 20px; /* Espacio entre el texto descriptivo y los proyectos */
+}
+
+
+/* Media Queries */
+@media (max-width: 800px) {
+    #general {
+        flex-direction: column; /* Cambia la dirección a columna */
+        align-items: center; /* Centra los elementos */
+    }
+    .proyecto {
+        width: 90%; /* Hace que los proyectos ocupen más ancho en pantallas pequeñas */
+        margin: 10px 0; /* Espaciado vertical entre proyectos */
+    }
 }

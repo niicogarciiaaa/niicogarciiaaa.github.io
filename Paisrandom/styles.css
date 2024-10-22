@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F9F5EB;/* Color de fondo claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #D5CBAF ; /* Color de fondo del contenedor */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 80%;
+    border: 1px solid #393E46; /* Color de borde oscuro */
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transición suave */
+}
+
+input:focus {
+    border-color: #08D9D6; /* Color al enfocar */
+    box-shadow: 0 0 5px rgba(8, 217, 214, 0.5); /* Sombra al enfocar */
+}
+
+#suggestions {
+    border: 1px solid #393E46; /* Color de borde oscuro */
+    max-height: 150px;
+    overflow-y: auto;
+    width: 80%;
+    background: white;
+    z-index: 10;
+    margin: 5px auto;
+    display: none; /* Inicialmente oculto */
+    margin-bottom: 10px;
+    border-radius: 4px; /* Bordes redondeados */
+    transition: all 0.3s; /* Transición suave */
+}
+
+.suggestion {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.suggestion:hover {
+    background-color: #08D9D6; /* Color al pasar el ratón */
+    color: white; /* Color del texto al pasar el ratón */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #08D9D6; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+button:hover {
+    background-color: #FF2E63; /* Color al pasar el ratón sobre el botón */
+}
+
+#result {
+    margin-top: 10px;
+    color: #FF2E63; /* Color del resultado */
+}
