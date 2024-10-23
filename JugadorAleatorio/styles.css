@@ -1,17 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #d4e9e2;
+    background-color: #F9F5EB;
     margin: 0;
     padding: 0;
-    color:white;
+    color: white;
 }
-
 
 .container {
     max-width: 600px;
     margin: 50px auto;
     padding: 20px;
-    background-color: #006241;
+    background-color: #D5CBAF;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     text-align: center;
@@ -21,12 +20,12 @@ h1 {
     font-size: 24px;
     margin-bottom: 20px;
     padding-bottom: 2%;
+    color: #393E46;
 }
 
 #clue {
     font-size: 18px;
     margin-bottom: 20px;
-    
 }
 
 .team-info {
@@ -54,7 +53,7 @@ h1 {
     padding: 10px 20px;
     font-size: 16px;
     color: #fff;
-    background-color: #1e3932;
+    background-color: #08D9D6;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -62,7 +61,7 @@ h1 {
 }
 
 #check-button:hover {
-    background-color:#1fc9d0;
+    background-color: #FF2E63;
 }
 
 #message {
@@ -80,7 +79,6 @@ h1 {
     padding: 0;
     margin-top: 10px;
     text-align: left;
-    
 }
 
 .suggestions-list li {
@@ -89,18 +87,20 @@ h1 {
     border-radius: 4px;
     margin-bottom: 5px;
     cursor: pointer;
-    background-color: #dff9ba;
-    color:black;
+    background-color: #E8DAC4;
+    color: black;
 }
 
 .suggestions-list li:hover {
-    background-color: #d4e9e2;
+    background-color: #08D9D6;
 }
-#team-badge{
+
+#team-badge {
     height: auto;
-    width: auro;
+    width: auto;
 }
-h1{
-    color: #1a3932;
+
+h1 {
+    color: #393E46;
     font-size: 2em;
 }
