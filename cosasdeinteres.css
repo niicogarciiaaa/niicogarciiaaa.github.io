@@ -1,0 +1,62 @@
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+img{
+    width:auto;
+    height: 270px;
+}
+body{
+background-color: #E8F5E9;
+}
+#lenguaje {
+    background-color: #C8E6C9;
+    display: flex; /* Hace que los divs hijos estén en una sola línea */
+    justify-content: space-around; /* Distribuye espacio entre los divs */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en lugar de desbordarse */
+    width: 20%; /* Ajusta el ancho del div */
+    padding: 20px; /* Espacio alrededor del contenido del div */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1); /* Añade una ligera sombra */
+    margin: 0 auto; /* Centra horizontalmente en caso de necesitarlo */
+
+    /* Animación inicial */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInMoveUp 1.5s ease-out forwards;
+
+    /* Transición en hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#lenguaje:hover {
+    transform: translateY(-20px); /* Mueve el div más hacia arriba */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Aumenta la sombra en hover */
+    margin-top: 100px;
+    margin-top:100px;
+}
+
+@keyframes fadeInMoveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeInMoveUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px); /* Inicia 50px debajo de su posición final */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
