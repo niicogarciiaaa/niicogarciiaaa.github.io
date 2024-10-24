@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <script src="ejercicio3.js" defer></script>
+</head>
+<body>
+    <pre>
+    <button onclick="mostrarTodosLosClientes()">Mostrar todos los clientes</button>
+    <br>
+    <label for="localidadInput">Introduce una localidad<input type="text" id="localidadInput" placeholder=""></label>
+
+    <button onclick="mostrarClientesPorLocalidad()">Mostrar clientes por localidad</button>
+    <br>
+    <label for="cuotaInput">Introduce una cuota minima<input type="number" id="cuotaInput" placeholder=""></label>
+    <button onclick="mostrarClientesPorCuota()">Mostrar clientes por cuota mayor</button>
+    </pre>
+    <div id="resultado"></div>
+
+    
+</body>
+</html>
