@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function cargarTemporadas() {
     const selectSeason = document.getElementById("season");
-    for (let year = 2005; year <= new Date().getFullYear(); year++) {
+    for (let year = 1950; year <= new Date().getFullYear(); year++) {
       const option = document.createElement("option");
       option.value = year;
       option.textContent = year;

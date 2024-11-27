@@ -47,4 +47,8 @@ table {
     font-weight: normal;
     font-style: normal;
   }
-  
+  tr:not(.encabezado):hover {
+    transform: translateY(-5px); /* Desplaza la fila hacia arriba */
+    background-color: #f0f0f0;  /* Cambia el color de fondo al pasar el mouse */
+    height: 100px;
+  }
