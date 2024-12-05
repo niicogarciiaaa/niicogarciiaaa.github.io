@@ -45,13 +45,6 @@ table {
     list-style-type: none; /* Elimina los puntos de la lista */
     margin: 5px 0;       /* Espacio entre los elementos de la lista */
   }
-
-  @font-face {
-    font-family: 'FuenteF1'; /* El nombre que usarás para referenciar la fuente */
-    src: url('./letra.TTF') format('truetype'); /* Definimos la ubicación del archivo y el formato */
-    font-weight: normal;
-    font-style: normal;
-  }
   tr:not(.encabezado):hover {
     
     transform: translateY(-5px); /* Desplaza la fila hacia arriba */
@@ -85,4 +78,11 @@ table {
   }
   h2{
     text-align: center;
+  }
+
+  @font-face {
+    font-family: 'FuenteF1'; /* El nombre que usarás para referenciar la fuente */
+    src: url('./letra.TTF') format('truetype'); /* Definimos la ubicación del archivo y el formato */
+    font-weight: normal;
+    font-style: normal;
   }
