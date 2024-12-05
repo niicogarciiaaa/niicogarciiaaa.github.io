@@ -3,35 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resultados F1</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+  <title>Resultados F1</title>
 </head>
 <body>
-  <header>
-    <h1>Resultados de Fórmula 1</h1>
-    <label for="season">Selecciona una temporada:</label>
-    <select id="season" onchange="cargarResultados()">
-      <option value="">--Selecciona--</option>
-    </select>
-  </header>
+  <h1>Resultados F1</h1>
 
-  <main>
-    <table id="resultados">
-      <thead>
-        <tr class="encabezado">
-          <th>Posición</th>
-          <th>Piloto</th>
-          <th>Equipo</th>
-          <th>Puntos</th>
-          <th>Ver Resultados</th> <!-- Nueva columna para el botón -->
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Resultados de la temporada -->
-      </tbody>
-    </table>
-  </main>
+  <label for="season">Selecciona una temporada:</label>
+  <select id="season"></select><br/>
+  <button onclick="cargarResultados()" class="button">Cargar Resultados</button>
 
-  <script src="script.js"></script>
+  <h2>Clasificación de Pilotos</h2>
+  <table id="tablaPilotos">
+    <thead>
+      <tr class="encabezado">
+        <th>Posición</th>
+        <th>Piloto</th>
+        <th>Equipo</th>
+        <th>Puntos</th>
+        <th>Detalles</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <h2>Clasificación de Constructores</h2>
+  <table id="tablaConstructores">
+    <thead>
+      <tr class="encabezado">
+        <th>Posición</th>
+        <th>Constructor</th>
+        <th>Puntos</th>
+        <th>Detalles</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  
 </body>
 </html>
