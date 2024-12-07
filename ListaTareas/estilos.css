@@ -1,0 +1,13 @@
+form{
+    width: 50%;
+    margin: auto;
+}
+h1{
+    color:rebeccapurple;
+}
+table{
+    border: 1px black solid;
+    max-width: 500px;
+      
+    margin:auto;
+}
