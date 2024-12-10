@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Nota Necesaria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label, input, button {
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calculadora de Nota Necesaria</h1>
+    
+    <label for="notaAdicional">Nota adicional asegurada (por ejemplo, 0.5):</label>
+    <input type="number" id="notaAdicional" min="0" max="10" step="0.1" value="0.5" required>
+    
+    <label for="notaPractica">Nota en la parte práctica:</label>
+    <input type="number" id="notaPractica" min="0" max="10" step="0.1" required>
+    
+    <label for="notaTeorica">Nota en la parte teórica:</label>
+    <input type="number" id="notaTeorica" min="0" max="10" step="0.1" required>
+    
+    <button onclick="calcularNota()">Calcular</button>
+    
+    <h2>Resultado</h2>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularNota() {
+            // Obtener los valores de los inputs
+            let notaPractica = parseFloat(document.getElementById("notaPractica").value);
+            let notaTeorica = parseFloat(document.getElementById("notaTeorica").value);
+            let notaAdicional = parseFloat(document.getElementById("notaAdicional").value);
+            
+            // Verificar si los valores son válidos
+            if (isNaN(notaPractica) && isNaN(notaTeorica)) {
+                document.getElementById("resultado").textContent = "Por favor, ingrese al menos una nota.";
+                return;
+            }
+
+            // Porcentajes
+            const porcentajeTeorico = 0.35;
+            const porcentajePractico = 0.65;
+            const objetivoTotal = 5; // Nota mínima para aprobar
+
+            // Nota mínima que necesitas considerando la nota adicional
+            let notaRestante = objetivoTotal - notaAdicional;
+
+            // Si se introduce una nota práctica, calcular la teórica necesaria
+            if (!isNaN(notaPractica) && isNaN(notaTeorica)) {
+                let notaNecesariaTeorica = (notaRestante - (notaPractica * porcentajePractico)) / porcentajeTeorico;
+
+                // Mostrar el resultado
+                if (notaNecesariaTeorica > 10) {
+                    document.getElementById("resultado").textContent = "La nota necesaria en la parte teórica es demasiado alta para aprobar.";
+                } else if (notaNecesariaTeorica <= 0) {
+                    document.getElementById("resultado").textContent = "¡Ya has aprobado! No necesitas más nota en la parte teórica.";
+                } else {
+                    document.getElementById("resultado").textContent = "Necesitas al menos " + notaNecesariaTeorica.toFixed(2) + " en la parte teórica para aprobar.";
+                }
+            }
+
+            // Si se introduce una nota teórica, calcular la práctica necesaria
+            if (!isNaN(notaTeorica) && isNaN(notaPractica)) {
+                let notaNecesariaPractica = (notaRestante - (notaTeorica * porcentajeTeorico)) / porcentajePractico;
+
+                // Mostrar el resultado
+                if (notaNecesariaPractica > 10) {
+                    document.getElementById("resultado").textContent = "La nota necesaria en la parte práctica es demasiado alta para aprobar.";
+                } else if (notaNecesariaPractica <= 0) {
+                    document.getElementById("resultado").textContent = "¡Ya has aprobado! No necesitas más nota en la parte práctica.";
+                } else {
+                    document.getElementById("resultado").textContent = "Necesitas al menos " + notaNecesariaPractica.toFixed(2) + " en la parte práctica para aprobar.";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
