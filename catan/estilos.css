@@ -1,0 +1,51 @@
+#boardContainer {
+    position: relative;
+    width: 300px; /* Tablero de 300px de ancho */
+    height: 300px; /* Tablero de 300px de alto */
+    margin: 0 auto; /* Centrado en la página */
+    border: 2px solid black;
+}
+
+.hex {
+    position: absolute;
+    width: 40px; /* Ancho del hexágono */
+    height: 46px; /* Alto del hexágono */
+    background-color: lightgray;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.number {
+    position: absolute;
+    top: 2px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.wood {
+    background-color: lightgreen;
+}
+
+.brick {
+    background-color: lightcoral;
+}
+
+.sheep {
+    background-color: lightyellow;
+}
+
+.wheat {
+    background-color: lightgoldenrodyellow;
+}
+
+.stone {
+    background-color: lightgray;
+}
+
+.desert {
+    background-color: lightpink; /* Desierto con color distinto */
+}
