@@ -1,38 +1,64 @@
-
-
-/* rojo1:E21818 rojo2:EA5455 beige1:E4DCCF beige2:F9F5EB*/
-h1{
-    color:red;
+/* Colores personalizados */
+.bg-rojo1 {
+    background-color: #E21818;
 }
-body{
+
+.bg-rojo2 {
+    background-color: #EA5455;
+}
+
+.bg-beige1 {
+    background-color: #E4DCCF;
+}
+
+.bg-beige2 {
     background-color: #F9F5EB;
 }
 
-
-a , li {
-    text-decoration: none;
-    color:black;
-    display: inline;
-    margin-right: 2%;
-    background-color:#E4DCCF;
-    margin-left: 25px;
-    font-family: Arial;
+.text-rojo1 {
+    color: #E21818;
 }
 
-.general{
-    margin-left: 10%;
-    text-align: center;
-    margin-right: 10%;
-    margin-top: 5%;
- }
- h3 {
-    text-align: left;
-    color:red;
+.text-rojo2 {
+    color: #EA5455;
+}
 
- }
- p{
-    text-align: justify;
- }
-source{
-    width: 200px;
+.text-beige1 {
+    color: #E4DCCF;
+}
+
+.text-beige2 {
+    color: #F9F5EB;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo de las cajas */
+.box {
+    position: relative;
+    margin-bottom: 20px;
+    background-color: #E4DCCF; /* Beige1 */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Efecto escalera con desplazamiento */
+.left {
+    margin-top: 0;
+}
+
+.center {
+    margin-top: 40px; /* Desplazamiento hacia abajo */
+    margin-left: 130px;
+}
+
+.right {
+    margin-top: 80px; /* Desplazamiento hacia abajo */
+    margin-left: 260px;
 }

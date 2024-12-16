@@ -4,76 +4,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="darkmode_toggle.js" defer></script>
+
+    <style>
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+        }
+
+        .card-hover:hover {
+            transform: scale(1.05); /* Efecto de escalado */
+            box-shadow: 0 0 15px 5px rgba(0, 123, 255, 0.5) !important; /* Sombra difuminada */
+        }
+
+        .card-img-top {
+            padding-top: 10px;
+        }
+
+        .card-text {
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+
+
+        }
+        body{
+            background-color: rgb(233, 227, 219);
+        }
+        .card {
+    width: 18rem; /* Ajusta el ancho de las tarjetas */
+    height: 18rem; /* Ajusta el alto de las tarjetas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido interno esté bien distribuido */
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    flex-wrap: wrap; /* Permite que las tarjetas se ajusten en filas si son demasiadas */
+    gap: 20px; /* Espaciado entre tarjetas */
+}
+.card-img-top {
+    height: 12rem; /* Ajusta el tamaño según tu diseño */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+}
+
+        
+
+        
+    </style>
 </head>
 <body>
-    
-    
+
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card card-hover">
+                    <a href="./TrabajoObligatorio/paginaprincipal.html" target="_blank">
+                        <img src="./TrabajoObligatorio/EjecucionPagina/ejecuciónInicio.png" class="card-img-top" alt="Vista de la página del concesionario">
+                        <div class="card-body">
+                            <p class="card-text">Trabajo Interfaces Web (Página Concesionario)</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+
+            <div class="col-md-3 mb-4">
+                <div class="card card-hover">
+                    <a href="./JugadorAleatorio/index.html" target="_blank">
+                        <img src="./JugadorAleatorio/ejecucion/pagina.png" class="card-img-top" alt="Vista de la página Jugador Aleatorio">
+                        <div class="card-body">
+                            <p class="card-text">Jugador Aleatorio</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            
+            
+        </div>
 
 
-    <div id="general">
-        <div class="proyecto">
-            <a href="./TrabajoObligatorio/paginaprincipal.html" target="_blank">
-                <img src="./TrabajoObligatorio/EjecucionPagina/ejecuciónInicio.png" alt="Vista de la página del concesionario">
-                <p>Trabajo Interfaces Web (Página Concesionario)</p>
-            </a>
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card card-hover">
+                    <a href="./Paisrandom/index.html" target="_blank">
+                        <img src="./Paisrandom/ejecucion/pagina.png" class="card-img-top" alt="Vista de la página País Aleatorio">
+                        <div class="card-body">
+                            <p class="card-text">País Aleatorio</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card card-hover">
+                    <a href="./cosasdeinteres.html" target="_blank">
+                        <img src="./imagenes/lenguajes_1.png" class="card-img-top" alt="Cosas de interés">
+                        <div class="card-body">
+                            <p class="card-text">Cosas de Interés</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            </div>
+            <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card card-hover">
+                    <a href="./CalculadorDinamicoPHP/index.html">
+                        <div class="card-body">
+                            <p class="card-text">Calculador Nota Dinámica</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card card-hover">
+                    <a href="./ResultadosF1/index.html">
+                        <div class="card-body">
+                            <p class="card-text">Resultados F1</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-    
-        <div class="proyecto">
-            <a href="./paginahorario/index.html" target="_blank">
-                <img src="./paginahorario/ejecucion/pagina.png" alt="Vista de la página Horario y Notas">   
-                <p>Horario y Notas</p>
-            </a>
+            <div class="col-md-3 mb-4">
+                <!--<div class="card card-hover">
+                    <a href="./paginahorario/index.html" target="_blank">
+                        <img src="./paginahorario/ejecucion/pagina.png" class="card-img-top" alt="Vista de la página Horario y Notas">
+                        <div class="card-body">
+                            <p class="card-text">Horario y Notas</p>
+                        </div>
+                    </a>
+                </div>-->
+
+
+                
+            </div>
+            
         </div>
-    
-        <div class="proyecto">
-            <a href="./JugadorAleatorio/index.html" target="_blank">
-                <img src="./JugadorAleatorio/ejecucion/pagina.png" alt="Vista de la página Jugador Aleatorio">   
-                <p>Jugador Aleatorio</p>
-            </a>
-        </div>
-    
-        <!-- Elimina o completa este div vacío -->
-        <div class="proyecto">
-            <a href="./Paisrandom/index.html" target="_blank">
-                <img src="./Paisrandom/ejecucion/pagina.png" alt="Vista de la página Jugador Aleatorio">   
-                <p>País Aleatorio</p>
-            </a>
+
+        <div class="text-center mt-4" id="descripcion">
+            <p>Soy Nicolas. Como desarrollador web, me especializo en crear aplicaciones y sitios web que priorizan tanto la funcionalidad como la experiencia del usuario. Me gusta trabajar con HTML, CSS y JavaScript, desarrollando proyectos que van desde sistemas de gestión de datos, como horarios y notas, hasta juegos interactivos. Siempre estoy buscando mejorar la interfaz, optimizar el rendimiento y mantener un código bien organizado y fácil de entender. Disfruto de los retos que presentan los proyectos web y me esfuerzo por seguir aprendiendo y aplicando las mejores prácticas.</p>
         </div>
     </div>
+    <button id="darkModeToggle" class="btn btn-primary my-3">🌙</button>
 
-
-    <div id="general">
-        <div class="proyecto">
-            <a href="./cosasdeinteres.html" target="_blank">
-                <img src="./imagenes/lenguajes_1.png" alt="cosas de interes">   
-                <p>Cosas de Interés</p>
-            </a>
-        </div>
-    
-        <div class="proyecto">
-           <a href="./ejercicios.html">
-            <img src="" alt="">
-            <p>Ejercicios JavaScript</p>
-           </a>
-        </div>
-    
-        <div class="proyecto">
-                <a href="./CalculadorDinamicoPHP/index.html"><p>Calculador nota dinamica</p></a>
-        </div>
-    
-        <!-- Elimina o completa este div vacío -->
-        <div class="proyecto">
-            <a href="./ResultadosF1/index.html">
-            <p>Resultados F1</p></a>
-        </div>
-    </div>
-
-
-    <div align="center" id="descripcion">
-        <p>Soy nicolas,como desarrollador web, me especializo en crear aplicaciones y sitios web que priorizan tanto la funcionalidad como la experiencia del usuario. Me gusta trabajar con HTML, CSS y JavaScript, desarrollando proyectos que van desde sistemas de gestión de datos, como horarios y notas, hasta juegos interactivos. Siempre estoy buscando mejorar la interfaz, optimizar el rendimiento y mantener un código bien organizado y fácil de entender.
-             Disfruto de los retos que presentan los proyectos web y me esfuerzo por seguir aprendiendo y aplicando las mejores prácticas.</p>
-    </div>
-    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>
