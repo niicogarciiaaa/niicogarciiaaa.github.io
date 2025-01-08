@@ -62,3 +62,19 @@ a:hover {
     margin-top: 80px; /* Desplazamiento hacia abajo */
     margin-left: 260px;
 }
+
+@media (max-width: 800px) {
+    .left {
+        margin-top: 0;
+    }
+    
+    .center {
+        margin-top: 10px; /* Desplazamiento hacia abajo */
+        margin-left: 100px;
+    }
+    
+    .right {
+        margin-top: 40px; /* Desplazamiento hacia abajo */
+        margin-left: 200px;
+    }
+}
